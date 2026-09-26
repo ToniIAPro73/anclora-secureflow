@@ -14,9 +14,18 @@ QA_AUTH_MODEL=NOT_APPLICABLE
 QA_DELETE_AFTER_TEST=NOT_APPLICABLE
 VISUAL_QA_CAPABILITY_REQUIRED=true
 VISUAL_QA_EXECUTION=BY_QA_MODE
-GIT_WORKFLOW_MODEL=MAIN_ONLY
+GIT_WORKFLOW_MODEL=FULL_PROMOTION
+WORK_BRANCH=development
 AUTO_PROMOTE=false
 ```
+
+> [!NOTE]
+> Actualizado 2026-09-26: el repo se bootstrapeó con todo el trabajo real en una rama
+> llamada `anclora-secureflow` en lugar de `development`, y `main` solo tenía el commit
+> inicial vacío. Se crearon `development`, `staging` y `production` a partir de esa rama
+> (mismo commit en las tres) y se adoptó el modelo `FULL_PROMOTION` explícitamente pedido
+> por Toni. La rama `anclora-secureflow` queda obsoleta y se elimina tras verificar que
+> `development` contiene el mismo contenido.
 
 ## Runtime local
 
