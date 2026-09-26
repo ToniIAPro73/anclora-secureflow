@@ -172,3 +172,44 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 @media (max-width: 900px) {
   :root[data-theme='light'] .section--products::before { background-position: center -70px; }
 }
+
+/* Header destinations occupy the viewport below the sticky header. */
+.hero, .section--products, .how-section, .security-section, .faq-section, .access-section { min-height: calc(100vh - 76px); scroll-margin-top: 76px; }
+.hero { display: flex; align-items: center; }
+.hero__content { padding-top: 0; }
+.section--products, .how-section, .security-section, .faq-section, .access-section { display: flex; align-items: center; }
+.section--products > .container, .how-section > .container, .security-section > .container, .faq-section > .container, .access-section > .container { width: min(1180px, calc(100% - 80px)); }
+.section-heading__lead { width: min(620px, 100%); margin: 22px auto 0; color: var(--muted); font-size: 17px; line-height: 1.55; }
+
+.how-section { position: relative; isolation: isolate; overflow: hidden; background: var(--navy-2); }
+.how-section::before { content: ''; position: absolute; z-index: -1; inset: 0; background: url('/assets/secureflow-solutions.png') center / cover no-repeat; opacity: .12; filter: saturate(.8); }
+.how-section::after { content: ''; position: absolute; z-index: -1; inset: 0; background: radial-gradient(circle at 50% 50%, transparent 0%, var(--navy-2) 72%); pointer-events: none; }
+.how-section > .container { position: relative; z-index: 1; }
+.how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 54px; }
+.how-card { position: relative; min-height: 246px; padding: 28px 24px; border: 1px solid var(--line); border-radius: 14px; background: color-mix(in srgb, var(--card) 86%, transparent); box-shadow: var(--shadow); }
+.how-card__number { position: absolute; top: 22px; right: 22px; color: var(--cyan); font: 800 11px/1 Manrope, sans-serif; letter-spacing: .12em; }
+.how-card__icon { width: 58px; height: 58px; display: grid; place-items: center; margin-bottom: 26px; border: 1px solid var(--line-strong); border-radius: 50%; color: var(--cyan); background: rgba(0, 215, 255, .08); }
+.how-card h3 { margin: 0 0 12px; font-size: 22px; }
+.how-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+.faq-section { position: relative; isolation: isolate; overflow: hidden; background: var(--navy); }
+.faq-section::before { content: ''; position: absolute; z-index: -1; inset: 0; background: url('/assets/secureflow-solutions.png') center / cover no-repeat; opacity: .1; filter: saturate(.75); }
+.faq-section::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, var(--navy) 0%, color-mix(in srgb, var(--navy) 78%, transparent) 52%, color-mix(in srgb, var(--navy) 35%, transparent) 100%); pointer-events: none; }
+.faq-section > .container { position: relative; z-index: 1; }
+
+@media (max-width: 900px) {
+  .hero, .section--products, .how-section, .security-section, .faq-section, .access-section { min-height: calc(100vh - 68px); scroll-margin-top: 68px; }
+  .section--products > .container, .how-section > .container, .security-section > .container, .faq-section > .container, .access-section > .container { width: min(100% - 48px, 680px); }
+  .how-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .section-heading__lead { font-size: 15px; }
+  .how-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 30px; }
+  .how-card { min-height: 188px; padding: 17px 15px; }
+  .how-card__number { top: 16px; right: 15px; }
+  .how-card__icon { width: 42px; height: 42px; margin-bottom: 14px; }
+  .how-card h3 { margin-bottom: 8px; font-size: 17px; }
+  .how-card p { font-size: 11px; line-height: 1.4; }
+  .faq-layout { gap: 34px; }
+}

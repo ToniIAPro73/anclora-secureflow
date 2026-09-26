@@ -11,6 +11,10 @@ export const copy = {
       secondary: 'Descubrir SecureFlow',
     },
     products: { eyebrow: 'NUESTRAS SOLUCIONES', title: 'Cuatro capacidades, un flujo completo.', link: 'Conocer producto' },
+    how: {
+      eyebrow: 'CÓMO FUNCIONA', title: 'Un flujo claro de principio a fin.', body: 'Cada capacidad transforma una etapa del trabajo con tus documentos y datos.',
+      steps: [['Prepara', 'Convierte y organiza tus archivos para empezar con una base limpia.'], ['Protege', 'Anonimiza la información sensible y mantén el control del acceso.'], ['Extrae', 'Convierte documentos en datos estructurados y utilizables.'], ['Automatiza', 'Conecta resultados y acelera tus flujos de trabajo.']],
+    },
     security: {
       eyebrow: 'SEGURIDAD POR DISEÑO', title: 'Tus datos, siempre bajo control.',
       items: [
@@ -41,6 +45,10 @@ export const copy = {
     nav: { products: 'Products', how: 'How it works', security: 'Security', faq: 'FAQ', access: 'Request access' },
     hero: { eyebrow: 'ANCLORA SECUREFLOW', title: 'From the original file to data ready to use.', body: 'Prepare files, protect sensitive information, extract data and automate your workflows.', primary: 'Request access', secondary: 'Discover SecureFlow' },
     products: { eyebrow: 'OUR SOLUTIONS', title: 'Four capabilities, one complete flow.', link: 'Learn about the product' },
+    how: {
+      eyebrow: 'HOW IT WORKS', title: 'A clear flow from start to finish.', body: 'Each capability transforms one stage of your work with documents and data.',
+      steps: [['Prepare', 'Convert and organise your files to start from a clean foundation.'], ['Protect', 'Anonymise sensitive information and keep access under control.'], ['Extract', 'Turn documents into structured, usable data.'], ['Automate', 'Connect results and accelerate your workflows.']],
+    },
     security: { eyebrow: 'SECURITY BY DESIGN', title: 'Your data, always under control.', items: [['Confidentiality', 'Processing designed to protect sensitive information.'], ['Integrity', 'Traceable, verifiable and reproducible results.'], ['Compliance', 'Tools designed for controlled document and data workflows.']], cta: 'Request evaluation access' },
     faq: { eyebrow: 'FREQUENTLY ASKED QUESTIONS', title: 'Answers, without the noise.', questions: [['Can I use a single application?', 'Yes. Each product can be used independently for the workflow you need to solve.'], ['Can I purchase a pack of two, three or four applications?', 'Yes. Packs grant access to several products from one account.'], ['How does whitelist access work?', 'Whitelist access is managed per user and product.'], ['Are my documents stored?', 'Each application defines its own processing flow. SecureFlow does not promise shared storage where none exists.'], ['Can I expand my access later?', 'Yes. Request additional products or move to a wider pack.'], ['Will new applications be added to SecureFlow?', 'Yes. The catalogue is prepared for future applications without changing your account.']] },
     form: { eyebrow: 'JOIN THE EARLY ACCESS LIST', title: 'Prepare your data flow with more security.', body: 'Request access to one SecureFlow application or a pack.', name: 'Name', email: 'Email', company: 'Company', product: 'Product or pack of interest', message: 'Optional message', submit: 'Request access', note: 'The form is ready to connect to the whitelist. No data has been sent yet.' },
