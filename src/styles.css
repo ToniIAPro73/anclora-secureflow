@@ -193,7 +193,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .how-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
 
 .faq-section { position: relative; isolation: isolate; overflow: hidden; background: var(--navy); }
-.faq-section::before { content: ''; position: absolute; z-index: -1; inset: 0; background: url('/assets/secureflow-solutions.png') center / cover no-repeat; opacity: .1; filter: saturate(.75); }
+.faq-section::before { content: ''; position: absolute; z-index: -1; inset: 0; background: radial-gradient(circle at 78% 34%, color-mix(in srgb, var(--cyan) 13%, transparent), transparent 30%), radial-gradient(circle at 15% 82%, color-mix(in srgb, var(--navy-3) 78%, transparent), transparent 42%); opacity: .9; }
 .faq-section::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, var(--navy) 0%, color-mix(in srgb, var(--navy) 78%, transparent) 52%, color-mix(in srgb, var(--navy) 35%, transparent) 100%); pointer-events: none; }
 .faq-section > .container { position: relative; z-index: 1; }
 
