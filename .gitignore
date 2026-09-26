@@ -1,5 +1,35 @@
-node_modules
-dist
-.vite
-*.local
+# Dependencies
+node_modules/
+
+# Vite / TypeScript build output
+dist/
+*.tsbuildinfo
+
+# Environment and credentials
+.env*
+!.env.example
+*.pem
+*token.json
+*credentials.json
+
+# Test and tooling output
+coverage/
+playwright-report/
+test-results/
+.cache/
+.tmp/
+
+# Local editor / operating system files
 .DS_Store
+.idea/
+.vscode/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Vercel local metadata
+.vercel/
