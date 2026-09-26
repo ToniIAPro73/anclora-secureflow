@@ -132,3 +132,30 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .solution-stage::after { background: linear-gradient(180deg, transparent 0%, transparent 35%, rgba(6, 23, 40, .9) 50%, var(--navy) 62%); }
   .product-grid { margin-top: 260px; }
 }
+
+/* The supplied constellation is the full-bleed atmosphere of the section,
+   rather than a framed image inside it. The overlay preserves readable HTML
+   content above the artwork in both themes. */
+.section--products { position: relative; isolation: isolate; overflow: hidden; background: var(--navy); }
+.section--products::before { content: ''; position: absolute; z-index: -2; inset: 0; background: url('/assets/secureflow-solutions.png') center top / cover no-repeat; }
+.section--products::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(6, 23, 40, .76) 0%, rgba(6, 23, 40, .18) 19%, rgba(6, 23, 40, .1) 44%, rgba(6, 23, 40, .98) 54%, var(--navy) 60%); pointer-events: none; }
+.section--products > .container { position: relative; z-index: 1; }
+.section--products .section-heading { position: relative; z-index: 1; }
+.solution-stage { min-height: 694px; overflow: visible; background: transparent; border-radius: 0; }
+.solution-stage::after, .solution-stage__art { display: none; }
+.solution-stage::before { display: none; }
+
+:root[data-theme='light'] .section--products::before { background-image: url('/assets/secureflow-solutions-light.png'); }
+:root[data-theme='light'] .section--products::after { background: linear-gradient(180deg, rgba(238, 247, 251, .86) 0%, rgba(238, 247, 251, .34) 21%, rgba(238, 247, 251, .18) 44%, rgba(238, 247, 251, .98) 54%, var(--navy) 60%); }
+:root[data-theme='light'] .product-card { background: linear-gradient(145deg, rgba(239, 249, 253, .94), rgba(218, 239, 247, .9)); border-color: rgba(0, 127, 157, .48); box-shadow: 0 18px 45px rgba(18, 73, 98, .16), inset 0 1px 0 rgba(255, 255, 255, .7); }
+:root[data-theme='light'] .product-card--purgedoc { border-color: rgba(31, 117, 190, .58); }
+:root[data-theme='light'] .product-card--tableextract { border-color: rgba(95, 91, 190, .62); }
+:root[data-theme='light'] .product-card--cleansheet { border-color: rgba(0, 127, 157, .58); }
+
+@media (max-width: 900px) {
+  .solution-stage { min-height: 1040px; }
+}
+
+@media (max-width: 560px) {
+  .solution-stage { min-height: 1040px; }
+}
