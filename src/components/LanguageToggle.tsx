@@ -3,5 +3,6 @@ import { Icon } from './Icon';
 
 export function LanguageToggle({ locale, onChange }: { locale: Locale; onChange: (locale: Locale) => void }) {
   const nextLocale = locale === 'es' ? 'en' : 'es';
-  return <button className="language-toggle" type="button" data-testid="language-toggle-button" onClick={() => onChange(nextLocale)} title={locale === 'es' ? 'Cambiar a inglés' : 'Cambiar a español'} aria-label={`Cambiar idioma. Idioma actual: ${locale.toUpperCase()}`}><Icon name="globe" size={19} /><span>{locale.toUpperCase()}</span></button>;
+  const labels = locale === 'es' ? { title: 'Cambiar a inglés', aria: 'Cambiar idioma. Idioma actual: español' } : { title: 'Switch to Spanish', aria: 'Change language. Current language: English' };
+  return <button className="language-toggle" type="button" data-testid="language-toggle-button" onClick={() => onChange(nextLocale)} title={labels.title} aria-label={labels.aria}><Icon name="globe" size={19} /><span>{locale.toUpperCase()}</span></button>;
 }
