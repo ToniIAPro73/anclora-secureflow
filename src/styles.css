@@ -105,3 +105,30 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 @media (prefers-reduced-motion: reduce) {
   .solution-stage__halo { animation: none; }
 }
+
+/* Reference composition: use the supplied SecureFlow constellation as the atmosphere,
+   while keeping the product cards as real, accessible HTML controls. */
+.solution-stage { min-height: 694px; overflow: hidden; padding: 0 0 8px; background: var(--navy); border-radius: 4px; }
+.solution-stage::before { display: none; }
+.solution-stage::after { content: ''; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, transparent 0%, transparent 46%, rgba(6, 23, 40, .16) 53%, rgba(6, 23, 40, .92) 68%, var(--navy) 82%); pointer-events: none; }
+.solution-stage__art { position: absolute; z-index: 0; inset: 0 0 auto; height: 532px; background: url('/assets/secureflow-solutions.png') center top / 100% auto no-repeat; filter: saturate(.92); }
+.product-grid { z-index: 2; margin-top: 388px; }
+.product-card { min-height: 292px; background: linear-gradient(145deg, #0a3049, #061d35); border-color: rgba(55, 239, 255, .54); box-shadow: 0 18px 45px rgba(0, 0, 0, .28), inset 0 1px 0 rgba(255, 255, 255, .05); }
+.product-card::before { background: linear-gradient(180deg, rgba(0, 215, 255, .1), transparent 32%); }
+.product-card--purgedoc { border-color: rgba(31, 157, 255, .68); }
+.product-card--tableextract { border-color: rgba(138, 125, 255, .72); }
+.product-card--cleansheet { border-color: rgba(55, 239, 255, .62); }
+
+@media (max-width: 900px) {
+  .solution-stage { min-height: 1040px; }
+  .solution-stage__art { height: 450px; background-size: auto 570px; }
+  .solution-stage::after { background: linear-gradient(180deg, transparent 0%, transparent 37%, rgba(6, 23, 40, .82) 49%, var(--navy) 62%); }
+  .product-grid { margin-top: 315px; }
+}
+
+@media (max-width: 560px) {
+  .solution-stage { min-height: 1040px; }
+  .solution-stage__art { height: 390px; background-size: auto 490px; }
+  .solution-stage::after { background: linear-gradient(180deg, transparent 0%, transparent 35%, rgba(6, 23, 40, .9) 50%, var(--navy) 62%); }
+  .product-grid { margin-top: 260px; }
+}
