@@ -34,3 +34,20 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 @media (max-width: 900px) { .container { width: min(100% - 48px, 680px); }.desktop-nav, .header-actions { display: none; }.site-header { justify-content: space-between; padding-inline: 24px; }.mobile-menu-button { display: inline-grid; }.mobile-nav { position: fixed; inset: 76px 0 auto; padding: 28px 24px; flex-direction: column; gap: 20px; background: var(--navy-2); border-bottom: 1px solid var(--line); }.menu-open .mobile-nav { display: flex; }.hero { min-height: 680px; }.hero__background { background-position: 70% center; opacity: .6; }.hero__content { padding-top: 88px; }.hero h1 { max-width: 600px; }.product-grid { grid-template-columns: repeat(2, 1fr); }.faq-layout, .access-layout { grid-template-columns: 1fr; gap: 48px; }.faq-layout .section-heading { text-align: center; }.security-grid { gap: 20px; }.security-item:not(:last-child) { padding-right: 20px; }.access-section { padding-block: 88px; } }
 @media (max-width: 560px) { .container { width: calc(100% - 36px); }.site-header { height: 68px; }.brand-mark { width: 34px; height: 34px; }.brand-name { font-size: 15px; }.mobile-nav { inset: 68px 0 auto; }.hero { min-height: 650px; }.hero__background { background-position: 66% center; opacity: .38; }.hero__content { padding-top: 80px; }.hero h1 { font-size: clamp(40px, 13vw, 58px); }.hero__lead { font-size: 16px; }.hero__actions { flex-wrap: wrap; gap: 18px; }.hero__signal { display: none; }.section { padding: 80px 0; }.section-heading { margin-bottom: 34px; }.section h2 { font-size: 34px; }.product-grid { grid-template-columns: 1fr; }.product-card { min-height: 290px; }.flow-strip__inner { justify-content: flex-start; overflow: hidden; gap: 11px; white-space: nowrap; font-size: 8px; }.flow-strip i { flex: 0 0 3px; }.security-grid { grid-template-columns: 1fr; }.security-item:not(:last-child) { border-right: 0; border-bottom: 1px solid var(--line); padding: 0 0 24px; }.security-section .button { width: 100%; }.faq-question { font-size: 14px; }.form-grid { grid-template-columns: 1fr; }.access-form { padding: 21px; }.footer-grid { grid-template-columns: 1fr; text-align: center; }.footer-grid .brand-link { justify-content: center; }.site-footer nav { justify-content: center; flex-wrap: wrap; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+
+/* SaaS-tier controls: compact, luminous and consistent across Anclora products. */
+.header-actions { gap: 14px; }
+.language-toggle, .icon-button.theme-toggle { border: 2px solid var(--cyan); background: rgba(7, 24, 40, .82); box-shadow: 0 0 18px rgba(0, 215, 255, .2), inset 0 0 12px rgba(0, 215, 255, .07); color: var(--ice); transition: border-color .2s ease, box-shadow .2s ease, color .2s ease, transform .2s ease; }
+.language-toggle { min-width: 92px; height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 0 14px; border-radius: 999px; cursor: pointer; }
+.language-toggle svg { flex: 0 0 auto; color: var(--cyan); }
+.language-toggle span { font-size: 17px; font-weight: 700; letter-spacing: .02em; }
+.icon-button.theme-toggle { width: 48px; height: 48px; color: var(--cyan); }
+.language-toggle:hover, .icon-button.theme-toggle:hover { border-color: var(--cyan-2); box-shadow: 0 0 25px rgba(0, 215, 255, .36), inset 0 0 14px rgba(0, 215, 255, .1); color: var(--ice); transform: translateY(-1px); }
+.language-toggle:active, .icon-button.theme-toggle:active { transform: translateY(0); }
+.mobile-nav-tools { gap: 14px; }
+
+@media (max-width: 560px) {
+  .language-toggle { min-width: 86px; height: 44px; padding-inline: 12px; }
+  .icon-button.theme-toggle { width: 44px; height: 44px; }
+  .language-toggle span { font-size: 16px; }
+}
