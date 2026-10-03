@@ -35,6 +35,7 @@ de acceso anticipado sin persistir datos en este repositorio.
 ## Fuentes de autoridad
 
 - Política global del workspace: `../ANCLORA_WORKSPACE_AGENT_POLICY.md`.
+- Promotion semantics inherit the workspace Canonical Promotion Policy: default no automatic promotion; explicit current-task authorization permits gated, repository-supported promotion.
 - Runtime y modelo Git: `.anclora/PRODUCTION_RUNTIME.md`.
 - Adopción AOS: `.anclora/AOS_ADOPTION.md`.
 - Contratos del ecosistema: `anclora-vault` y `anclora-group` cuando estén disponibles en el workspace.
