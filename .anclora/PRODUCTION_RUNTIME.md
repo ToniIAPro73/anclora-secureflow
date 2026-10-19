@@ -1,3 +1,26 @@
+PROMOTION_MECHANISM=NONE
+PROMOTION_FLOW=NOT_CONFIGURED
+PROMOTION_SUPPORTED=false
+SECRET_COMMIT_FORBIDDEN=true
+SECRET_OUTPUT_FORBIDDEN=true
+PROMOTION_FORCE_PUSH_ALLOWED=false
+PROMOTION_AUTHORIZATION_CLEAR_ON_UNAUTHORIZED_PROMPT=true
+PROMOTION_AUTHORIZATION_CLEAR_ON_NEW_SESSION=true
+PROMOTION_AUTHORIZATION_SCOPE=CURRENT_TASK_OR_CONVERSATION
+AUTO_PROMOTE=false
+TEST_EXECUTION_POLICY=BATCHED
+STOP_WHEN_SUFFICIENT_EVIDENCE=true
+CAVEMAN_GRANULARITY=TASK
+CAVEMAN_MODE_DEFAULT=AUTO
+TOKEN_ECONOMY_POLICY=ADAPTIVE
+QA_MODE_DEFAULT=AUTO
+STOP_AFTER_DEVELOPMENT_PUSH=true
+PUSH_TARGET=origin/development
+FEATURE_BRANCHES=DISALLOWED
+DEFAULT_BRANCH=development
+WORKING_BRANCH=development
+ANCLORA_FLOW_CONTRACT_VERSION=2.0
+ANCLORA_FLOW_VERSION=1
 # Anclora SecureFlow — runtime y Git
 
 ## Contrato operativo
@@ -16,13 +39,10 @@ VISUAL_QA_CAPABILITY_REQUIRED=true
 VISUAL_QA_EXECUTION=BY_QA_MODE
 GIT_WORKFLOW_MODEL=FULL_PROMOTION
 WORK_BRANCH=development
-AUTO_PROMOTE=false
 EXPLICIT_PROMOTION_ALLOWED=true
-PROMOTION_AUTHORIZATION_SCOPE=CURRENT_TASK_OR_CONVERSATION
 PROMOTION_ORDER=development->staging->production->main
 PROMOTION_REQUIRES_PRE_STEP_GATES=true
 PROMOTION_STOP_ON_GATE_FAILURE=true
-PROMOTION_FORCE_PUSH_ALLOWED=false
 PROMOTION_OLD_AUTHORIZATION_PERSISTS=false
 ```
 
@@ -57,3 +77,8 @@ detenerse después de dejar el commit y el push solicitado; no debe autopromocio
 No se requieren variables de entorno para el comportamiento actual. Los ficheros `.env*`,
 tokens, credenciales y certificados están excluidos por `.gitignore` y nunca deben entrar
 en commits, capturas ni documentación pública.
+
+<!-- ANCLORA-MODS:START -->
+ANCLORA_MODS_COMMON_CONTRACT_VERSION=1.0.0
+Canonical shared rules: [Anclora Common Agent Contract](../anclora-mods/contracts/ANCLORA_COMMON_AGENT_CONTRACT_V1.md) and [Flow Amendment v2](../anclora-mods/ANCLORA_FLUJO_UNICO_V2.md). Repository-specific facts remain in this repository's `.anclora/` contracts.
+<!-- ANCLORA-MODS:END -->
