@@ -54,17 +54,19 @@ ANCLORA_FLOW_VERSION=1
 ```text
 PROJECT_ID=anclora-secureflow
 APPLICATION_TYPE=frontend
-PRODUCTION_HOSTING_PROVIDER=Vercel
+PRODUCTION_HOSTING_PROVIDER=Cloudflare Workers Static Assets
+PRODUCTION_DOMAIN=secureflow.anclora.com
+PRODUCTION_CUTOVER_STATUS=PENDING_PROMOTION_AND_DEPLOYMENT
+VERCEL_GIT_DEPLOYMENTS=DISABLED
+VERCEL_PROJECT_PAUSE=AFTER_CLOUDFLARE_CUTOVER_VERIFICATION
 DEVELOPMENT_PREVIEW_PROVIDER=Cloudflare Workers Static Assets
-DEVELOPMENT_PREVIEW_STATUS=PREPARED_NOT_PUBLISHED
+DEVELOPMENT_PREVIEW_STATUS=PUBLISHED_HTTP_200
 DEVELOPMENT_PREVIEW_BRANCH=development
 DEVELOPMENT_PREVIEW_WORKER=anclora-secureflow-development
-PRODUCTION_MIRROR_PROVIDER=Cloudflare Workers Static Assets
-PRODUCTION_MIRROR_STATUS=AUTHORIZED
-PRODUCTION_MIRROR_BRANCH=production
-PRODUCTION_MIRROR_WORKER=anclora-secureflow
-PRODUCTION_MIRROR_HOST=workers.dev
-PRODUCTION_DNS_CHANGE=NONE
+PRODUCTION_WORKER=anclora-secureflow
+PRODUCTION_WORKER_BRANCH=production
+PRODUCTION_WORKER_HOST=secureflow.anclora.com
+PRODUCTION_DNS_CHANGE=REPLACE existing Vercel CNAME with Cloudflare Worker Custom Domain
 RUNTIME_KIND=STATIC_FRONTEND
 LOCAL_RUNTIME_MODEL=STATIC_NO_DATABASE
 PRODUCTION_BACKEND_REQUIRED=false
@@ -90,10 +92,11 @@ PROMOTION_OLD_AUTHORIZATION_PERSISTS=false
 > por Toni. La rama `anclora-secureflow` queda obsoleta y se elimina tras verificar que
 > `development` contiene el mismo contenido.
 
-El hosting canónico de producción continúa en Vercel. Cloudflare Workers Static Assets publica
-además un mirror de producción desde la rama `production`, en el Worker `anclora-secureflow`
-bajo `workers.dev`. El preview de desarrollo usa el Worker `anclora-secureflow-development`;
-ninguno tiene dominio personalizado. El mirror de Cloudflare no cambia Vercel ni DNS.
+La producción se está trasladando a Cloudflare Workers Static Assets. El Worker
+`anclora-secureflow` servirá `secureflow.anclora.com`; el preview de desarrollo usa el Worker
+`anclora-secureflow-development` en `workers.dev`. El CNAME que hoy apunta a Vercel debe retirarse
+antes de crear el Custom Domain de Cloudflare. Vercel Git deployments quedarán desactivados y el
+proyecto Vercel se pausará después de verificar el corte en Cloudflare.
 
 ## Runtime local
 

@@ -3,13 +3,21 @@
   "name": "anclora-secureflow",
   "compatibility_date": "2026-10-05",
   "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "secureflow.anclora.com",
+      "custom_domain": true
+    }
+  ],
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application"
   },
   "env": {
     "development": {
-      "name": "anclora-secureflow-development"
+      "name": "anclora-secureflow-development",
+      "workers_dev": true,
+      "routes": []
     }
   }
 }
