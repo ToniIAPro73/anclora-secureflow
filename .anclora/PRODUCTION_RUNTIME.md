@@ -53,6 +53,12 @@ ANCLORA_FLOW_VERSION=1
 
 ```text
 PROJECT_ID=anclora-secureflow
+APPLICATION_TYPE=frontend
+PRODUCTION_HOSTING_PROVIDER=Vercel
+DEVELOPMENT_PREVIEW_PROVIDER=Cloudflare Workers Static Assets
+DEVELOPMENT_PREVIEW_STATUS=PREPARED_NOT_PUBLISHED
+DEVELOPMENT_PREVIEW_BRANCH=development
+DEVELOPMENT_PREVIEW_WORKER=anclora-secureflow-development
 RUNTIME_KIND=STATIC_FRONTEND
 LOCAL_RUNTIME_MODEL=STATIC_NO_DATABASE
 PRODUCTION_BACKEND_REQUIRED=false
@@ -77,6 +83,8 @@ PROMOTION_OLD_AUTHORIZATION_PERSISTS=false
 > (mismo commit en las tres) y se adoptó el modelo `FULL_PROMOTION` explícitamente pedido
 > por Toni. La rama `anclora-secureflow` queda obsoleta y se elimina tras verificar que
 > `development` contiene el mismo contenido.
+
+El hosting de producción continúa en Vercel. Se ha preparado un preview independiente de Cloudflare Workers Static Assets para la rama `development`; todavía no está publicado, usa el Worker `anclora-secureflow-development` en `workers.dev` y no tiene dominio personalizado. El workflow de preview no despliega desde `staging`, `production` ni `main`.
 
 ## Runtime local
 
