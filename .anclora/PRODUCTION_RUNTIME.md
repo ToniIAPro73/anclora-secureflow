@@ -59,6 +59,12 @@ DEVELOPMENT_PREVIEW_PROVIDER=Cloudflare Workers Static Assets
 DEVELOPMENT_PREVIEW_STATUS=PREPARED_NOT_PUBLISHED
 DEVELOPMENT_PREVIEW_BRANCH=development
 DEVELOPMENT_PREVIEW_WORKER=anclora-secureflow-development
+PRODUCTION_MIRROR_PROVIDER=Cloudflare Workers Static Assets
+PRODUCTION_MIRROR_STATUS=AUTHORIZED
+PRODUCTION_MIRROR_BRANCH=production
+PRODUCTION_MIRROR_WORKER=anclora-secureflow
+PRODUCTION_MIRROR_HOST=workers.dev
+PRODUCTION_DNS_CHANGE=NONE
 RUNTIME_KIND=STATIC_FRONTEND
 LOCAL_RUNTIME_MODEL=STATIC_NO_DATABASE
 PRODUCTION_BACKEND_REQUIRED=false
@@ -84,7 +90,10 @@ PROMOTION_OLD_AUTHORIZATION_PERSISTS=false
 > por Toni. La rama `anclora-secureflow` queda obsoleta y se elimina tras verificar que
 > `development` contiene el mismo contenido.
 
-El hosting de producción continúa en Vercel. Se ha preparado un preview independiente de Cloudflare Workers Static Assets para la rama `development`; todavía no está publicado, usa el Worker `anclora-secureflow-development` en `workers.dev` y no tiene dominio personalizado. El workflow de preview no despliega desde `staging`, `production` ni `main`.
+El hosting canónico de producción continúa en Vercel. Cloudflare Workers Static Assets publica
+además un mirror de producción desde la rama `production`, en el Worker `anclora-secureflow`
+bajo `workers.dev`. El preview de desarrollo usa el Worker `anclora-secureflow-development`;
+ninguno tiene dominio personalizado. El mirror de Cloudflare no cambia Vercel ni DNS.
 
 ## Runtime local
 
